@@ -18,8 +18,5 @@
         <module name="Core" />
       </profile>
     </annotationProcessing>
-    <bytecodeTargetLevel>
-      <module name="portofolio-project" target="19" />
-    </bytecodeTargetLevel>
   </component>
 </project>
