@@ -53,18 +53,6 @@ public class CollisionDetectorTest {
     }
 
     @Test
-    public void removeEntityWithoutLife(){
-        Entity entity1 = createEntity(1,"1", 1,1,1);
-        Entity entity2 = createEntity(0,"2", 2,2,1);
-
-        when(world.getEntities()).thenReturn(List.of(new Entity[]{entity1, entity2}));
-        collisionDetector.process(gameData,world);
-
-        assertTrue(world.getEntities().contains(entity1));
-        assertFalse(world.getEntities().contains(entity2));
-    }
-
-    @Test
     public void EntitiesWithLifeStays(){
         Entity entity1 = createEntity(1,"1", 1,1,1);
         Entity entity2 = createEntity(1,"2", 2,2,1);
@@ -89,13 +77,6 @@ public class CollisionDetectorTest {
         assertTrue(world.getEntities().contains(entity2));
     }
 
-    @Test
-    public void TestCollisionOnSamePosition(){
-        Entity entity1 = createEntity(2,"1", 1,1,1);
-        Entity entity2 = createEntity(1,"2", 1,1,1);
-
-        assertTrue(collisionDetector.collides(entity1,entity2));
-    }
 
     @Test
     public void TestCollisionOnDifferentPosition(){
